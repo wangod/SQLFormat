@@ -1,0 +1,10 @@
+E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\SQLFormat.exe.config
+E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\SQLFormat.exe
+E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\SQLFormat.pdb
+E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.csproj.AssemblyReference.cache
+E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.Form1.resources
+E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.Properties.Resources.resources
+E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.csproj.GenerateResource.cache
+E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.csproj.CoreCompileInputs.cache
+E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.exe
+E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.pdb
