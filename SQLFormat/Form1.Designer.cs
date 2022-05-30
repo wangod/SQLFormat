@@ -43,15 +43,26 @@ namespace SQLFormat
             this.cboxReplace = new System.Windows.Forms.CheckBox();
             this.txtReplace = new System.Windows.Forms.TextBox();
             this.btnSetting = new System.Windows.Forms.Button();
+            this.tlpSqlResult = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rtxtBoxGauss = new System.Windows.Forms.RichTextBox();
+            this.rtxtBoxOracle = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tlpMain.SuspendLayout();
             this.tlpBtn.SuspendLayout();
+            this.tlpSqlResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtxtSource
             // 
             this.rtxtSource.Location = new System.Drawing.Point(3, 3);
             this.rtxtSource.Name = "rtxtSource";
-            this.rtxtSource.Size = new System.Drawing.Size(182, 251);
+            this.rtxtSource.Size = new System.Drawing.Size(182, 199);
             this.rtxtSource.TabIndex = 0;
             this.rtxtSource.Text = "";
             // 
@@ -59,7 +70,7 @@ namespace SQLFormat
             // 
             this.rtxtTarget.Location = new System.Drawing.Point(324, 3);
             this.rtxtTarget.Name = "rtxtTarget";
-            this.rtxtTarget.Size = new System.Drawing.Size(182, 251);
+            this.rtxtTarget.Size = new System.Drawing.Size(182, 199);
             this.rtxtTarget.TabIndex = 1;
             this.rtxtTarget.Text = "";
             // 
@@ -67,7 +78,7 @@ namespace SQLFormat
             // 
             this.btnFormat.Location = new System.Drawing.Point(3, 303);
             this.btnFormat.Name = "btnFormat";
-            this.btnFormat.Size = new System.Drawing.Size(68, 21);
+            this.btnFormat.Size = new System.Drawing.Size(68, 29);
             this.btnFormat.TabIndex = 2;
             this.btnFormat.Text = "Format";
             this.btnFormat.UseVisualStyleBackColor = true;
@@ -82,11 +93,11 @@ namespace SQLFormat
             this.tlpMain.Controls.Add(this.tlpBtn, 1, 0);
             this.tlpMain.Controls.Add(this.rtxtSource, 0, 0);
             this.tlpMain.Controls.Add(this.rtxtTarget, 2, 0);
-            this.tlpMain.Location = new System.Drawing.Point(35, 34);
+            this.tlpMain.Location = new System.Drawing.Point(20, 3);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Size = new System.Drawing.Size(522, 340);
+            this.tlpMain.Size = new System.Drawing.Size(522, 433);
             this.tlpMain.TabIndex = 4;
             // 
             // tlpBtn
@@ -117,7 +128,7 @@ namespace SQLFormat
             this.tlpBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBtn.Size = new System.Drawing.Size(114, 327);
+            this.tlpBtn.Size = new System.Drawing.Size(114, 396);
             this.tlpBtn.TabIndex = 5;
             // 
             // cboxDefine
@@ -208,18 +219,93 @@ namespace SQLFormat
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
+            // tlpSqlResult
+            // 
+            this.tlpSqlResult.ColumnCount = 4;
+            this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpSqlResult.Controls.Add(this.label2, 2, 0);
+            this.tlpSqlResult.Controls.Add(this.rtxtBoxGauss, 3, 0);
+            this.tlpSqlResult.Controls.Add(this.rtxtBoxOracle, 1, 0);
+            this.tlpSqlResult.Controls.Add(this.label1, 0, 0);
+            this.tlpSqlResult.Location = new System.Drawing.Point(20, 13);
+            this.tlpSqlResult.Name = "tlpSqlResult";
+            this.tlpSqlResult.RowCount = 1;
+            this.tlpSqlResult.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSqlResult.Size = new System.Drawing.Size(388, 64);
+            this.tlpSqlResult.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(197, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Gauss";
+            // 
+            // rtxtBoxGauss
+            // 
+            this.rtxtBoxGauss.Location = new System.Drawing.Point(249, 3);
+            this.rtxtBoxGauss.Name = "rtxtBoxGauss";
+            this.rtxtBoxGauss.Size = new System.Drawing.Size(100, 58);
+            this.rtxtBoxGauss.TabIndex = 1;
+            this.rtxtBoxGauss.Text = "";
+            // 
+            // rtxtBoxOracle
+            // 
+            this.rtxtBoxOracle.Location = new System.Drawing.Point(55, 3);
+            this.rtxtBoxOracle.Name = "rtxtBoxOracle";
+            this.rtxtBoxOracle.Size = new System.Drawing.Size(100, 58);
+            this.rtxtBoxOracle.TabIndex = 0;
+            this.rtxtBoxOracle.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Oracle";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Location = new System.Drawing.Point(12, 12);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tlpMain);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.tlpSqlResult);
+            this.splitContainer1.Size = new System.Drawing.Size(572, 525);
+            this.splitContainer1.SplitterDistance = 439;
+            this.splitContainer1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 405);
-            this.Controls.Add(this.tlpMain);
+            this.ClientSize = new System.Drawing.Size(596, 549);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SQL Format";
             this.tlpMain.ResumeLayout(false);
             this.tlpBtn.ResumeLayout(false);
             this.tlpBtn.PerformLayout();
+            this.tlpSqlResult.ResumeLayout(false);
+            this.tlpSqlResult.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -240,6 +326,12 @@ namespace SQLFormat
         private System.Windows.Forms.TextBox txtReplace;
         private System.Windows.Forms.CheckBox cboxDefine;
         private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.TableLayoutPanel tlpSqlResult;
+        private System.Windows.Forms.RichTextBox rtxtBoxGauss;
+        private System.Windows.Forms.RichTextBox rtxtBoxOracle;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

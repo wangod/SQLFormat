@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DBInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OracleDB>
+    <IP>192.168.0.208</IP>
+    <Port>1521</Port>
+    <ServiceName>ORCL</ServiceName>
+    <UserID>eesadm</UserID>
+    <Password>bistel01</Password>
+  </OracleDB>
+</DBInfo>

@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using Oracle.ManagedDataAccess.Client;
+using SQLFormat.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +17,7 @@ namespace SQLFormat
 {
     public partial class Form1 : Form
     {
+        static DBInfo _dbInfo = null; 
         public Form1()
         {
             InitializeComponent();
@@ -20,10 +25,22 @@ namespace SQLFormat
             this.Width = 880;
             this.Height = 680;
 
+            this.splitContainer1.Dock = DockStyle.Fill;
             this.tlpMain.Dock = DockStyle.Fill;
             this.rtxtSource.Dock = DockStyle.Fill;
             this.rtxtTarget.Dock = DockStyle.Fill;
             this.tlpBtn.Dock = DockStyle.Fill;
+
+            this.tlpSqlResult.Dock = DockStyle.Fill;
+            this.rtxtBoxOracle.Dock = DockStyle.Fill;
+            this.rtxtBoxGauss.Dock = DockStyle.Fill;
+
+            InitData(AppDomain.CurrentDomain.BaseDirectory + "db.xml");
+        }
+
+        private void InitData(string filePath)
+        {
+            _dbInfo = Class2XmlUtil.ToClass<DBInfo>(filePath);  
         }
 
         private void btnFormat_Click(object sender, EventArgs e)
@@ -34,7 +51,7 @@ namespace SQLFormat
 
                 if (cboxUpper.Checked)
                     source = ToUpper(source);
-                     
+
                 if (cboxParam.Checked)
                     source = ToMSSParam(source);
 
@@ -57,9 +74,21 @@ namespace SQLFormat
 
                 this.rtxtTarget.Focus();
                 this.rtxtTarget.SelectAll();
-                this.rtxtTarget.Copy(); 
+                this.rtxtTarget.Copy();
+
+                if (!string.IsNullOrEmpty(_dbInfo.OracleDB.IP))
+                {
+                    string oracleresult = DAS.Instance.OracleSql(_dbInfo.OracleDB.IP, _dbInfo.OracleDB.Port, _dbInfo.OracleDB.ServiceName, _dbInfo.OracleDB.UserID, _dbInfo.OracleDB.Password, this.rtxtTarget.Text);
+                    this.rtxtBoxOracle.Text = oracleresult;
+                }
+
+                if (!string.IsNullOrEmpty(_dbInfo.GaussDB.IP))
+                {
+                    string gaussresult = DAS.Instance.GaussSql(_dbInfo.GaussDB.IP, _dbInfo.GaussDB.Port, _dbInfo.GaussDB.UserID, _dbInfo.GaussDB.Password, this.rtxtTarget.Text);
+                    this.rtxtBoxGauss.Text = gaussresult;
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -67,7 +96,7 @@ namespace SQLFormat
 
         private string ToSQL(string source)
         {
-           return NSQLFormatter.Formatter.Format(source);
+            return NSQLFormatter.Formatter.Format(source);
         }
 
         private string ToUpper(string source)
@@ -75,10 +104,10 @@ namespace SQLFormat
             return source?.ToUpper();
         }
 
-        private string ToReplace(string source,string oldValue)
+        private string ToReplace(string source, string oldValue)
         {
             string[] str = oldValue?.Split(',');
-            if(str!=null && str.Length > 0)
+            if (str != null && str.Length > 0)
             {
                 foreach (var item in str)
                 {
@@ -173,7 +202,7 @@ namespace SQLFormat
                 {
                     startIndex++;
                     name += source[j];
-                    if (source[j] == '}') 
+                    if (source[j] == '}')
                     {
                         break;
                     }
@@ -208,7 +237,8 @@ namespace SQLFormat
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-
+            SettingForm sf = new SettingForm(_dbInfo);
+            sf.ShowDialog();
         }
     }
 }
