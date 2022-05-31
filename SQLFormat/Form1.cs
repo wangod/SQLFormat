@@ -31,9 +31,7 @@ namespace SQLFormat
             this.rtxtTarget.Dock = DockStyle.Fill;
             this.tlpBtn.Dock = DockStyle.Fill;
 
-            this.tlpSqlResult.Dock = DockStyle.Fill;
-            this.rtxtBoxOracle.Dock = DockStyle.Fill;
-            this.rtxtBoxGauss.Dock = DockStyle.Fill;
+            this.tlpSqlResult.Dock = DockStyle.Fill;   
 
             InitData(AppDomain.CurrentDomain.BaseDirectory + "db.xml");
         }
@@ -76,16 +74,23 @@ namespace SQLFormat
                 this.rtxtTarget.SelectAll();
                 this.rtxtTarget.Copy();
 
-                if (!string.IsNullOrEmpty(_dbInfo.OracleDB.IP))
-                {
-                    string oracleresult = DAS.Instance.OracleSql(_dbInfo.OracleDB.IP, _dbInfo.OracleDB.Port, _dbInfo.OracleDB.ServiceName, _dbInfo.OracleDB.UserID, _dbInfo.OracleDB.Password, this.rtxtTarget.Text);
-                    this.rtxtBoxOracle.Text = oracleresult;
+                if (this.cboxOracle.Checked && !string.IsNullOrEmpty(_dbInfo.OracleDB.IP) 
+                                            && !string.IsNullOrEmpty(_dbInfo.OracleDB.Port)
+                                            && !string.IsNullOrEmpty(_dbInfo.OracleDB.ServiceName)
+                                            && !string.IsNullOrEmpty(_dbInfo.OracleDB.UserID)
+                                            && !string.IsNullOrEmpty(_dbInfo.OracleDB.Password))
+                {    
+                    DataSet ds = DAS.Instance.ExecDataSetByOracle(_dbInfo.OracleDB.IP, _dbInfo.OracleDB.Port, _dbInfo.OracleDB.ServiceName, _dbInfo.OracleDB.UserID, _dbInfo.OracleDB.Password, this.rtxtTarget.Text);
+                    this.dgvOracle.DataSource = ds?.Tables[0];
                 }
 
-                if (!string.IsNullOrEmpty(_dbInfo.GaussDB.IP))
+                if (this.cboxGauss.Checked && !string.IsNullOrEmpty(_dbInfo.GaussDB.IP)
+                                           && !string.IsNullOrEmpty(_dbInfo.GaussDB.Port)
+                                           && !string.IsNullOrEmpty(_dbInfo.GaussDB.UserID)
+                                           && !string.IsNullOrEmpty(_dbInfo.GaussDB.Password))
                 {
-                    string gaussresult = DAS.Instance.GaussSql(_dbInfo.GaussDB.IP, _dbInfo.GaussDB.Port, _dbInfo.GaussDB.UserID, _dbInfo.GaussDB.Password, this.rtxtTarget.Text);
-                    this.rtxtBoxGauss.Text = gaussresult;
+                    DataSet ds = DAS.Instance.ExecDataSetByGauss(_dbInfo.GaussDB.IP, _dbInfo.GaussDB.Port, _dbInfo.GaussDB.UserID, _dbInfo.GaussDB.Password, this.rtxtTarget.Text);
+                    this.dgvGauss.DataSource = ds?.Tables[0];
                 }
             }
             catch (Exception ex)

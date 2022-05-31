@@ -44,11 +44,11 @@ namespace SQLFormat
             this.txtReplace = new System.Windows.Forms.TextBox();
             this.btnSetting = new System.Windows.Forms.Button();
             this.tlpSqlResult = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rtxtBoxGauss = new System.Windows.Forms.RichTextBox();
-            this.rtxtBoxOracle = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cboxOracle = new System.Windows.Forms.CheckBox();
+            this.cboxGauss = new System.Windows.Forms.CheckBox();
+            this.dgvOracle = new System.Windows.Forms.DataGridView();
+            this.dgvGauss = new System.Windows.Forms.DataGridView();
             this.tlpMain.SuspendLayout();
             this.tlpBtn.SuspendLayout();
             this.tlpSqlResult.SuspendLayout();
@@ -56,6 +56,8 @@ namespace SQLFormat
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOracle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGauss)).BeginInit();
             this.SuspendLayout();
             // 
             // rtxtSource
@@ -78,7 +80,7 @@ namespace SQLFormat
             // 
             this.btnFormat.Location = new System.Drawing.Point(3, 303);
             this.btnFormat.Name = "btnFormat";
-            this.btnFormat.Size = new System.Drawing.Size(68, 29);
+            this.btnFormat.Size = new System.Drawing.Size(90, 48);
             this.btnFormat.TabIndex = 2;
             this.btnFormat.Text = "Format";
             this.btnFormat.UseVisualStyleBackColor = true;
@@ -106,13 +108,13 @@ namespace SQLFormat
             this.tlpBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpBtn.Controls.Add(this.cboxDefine, 0, 6);
             this.tlpBtn.Controls.Add(this.cboxUpper, 0, 0);
-            this.tlpBtn.Controls.Add(this.btnFormat, 0, 10);
             this.tlpBtn.Controls.Add(this.cboxSQL, 0, 8);
             this.tlpBtn.Controls.Add(this.cboxParam, 0, 5);
             this.tlpBtn.Controls.Add(this.cboxNull2, 0, 4);
             this.tlpBtn.Controls.Add(this.cboxNull, 0, 3);
             this.tlpBtn.Controls.Add(this.cboxReplace, 0, 1);
             this.tlpBtn.Controls.Add(this.txtReplace, 0, 2);
+            this.tlpBtn.Controls.Add(this.btnFormat, 0, 10);
             this.tlpBtn.Controls.Add(this.btnSetting, 0, 9);
             this.tlpBtn.Location = new System.Drawing.Point(204, 3);
             this.tlpBtn.Name = "tlpBtn";
@@ -222,54 +224,20 @@ namespace SQLFormat
             // tlpSqlResult
             // 
             this.tlpSqlResult.ColumnCount = 4;
-            this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tlpSqlResult.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSqlResult.Controls.Add(this.label2, 2, 0);
-            this.tlpSqlResult.Controls.Add(this.rtxtBoxGauss, 3, 0);
-            this.tlpSqlResult.Controls.Add(this.rtxtBoxOracle, 1, 0);
-            this.tlpSqlResult.Controls.Add(this.label1, 0, 0);
+            this.tlpSqlResult.Controls.Add(this.dgvGauss, 3, 0);
+            this.tlpSqlResult.Controls.Add(this.cboxOracle, 0, 0);
+            this.tlpSqlResult.Controls.Add(this.cboxGauss, 2, 0);
+            this.tlpSqlResult.Controls.Add(this.dgvOracle, 1, 0);
             this.tlpSqlResult.Location = new System.Drawing.Point(20, 13);
             this.tlpSqlResult.Name = "tlpSqlResult";
             this.tlpSqlResult.RowCount = 1;
             this.tlpSqlResult.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSqlResult.Size = new System.Drawing.Size(388, 64);
+            this.tlpSqlResult.Size = new System.Drawing.Size(506, 64);
             this.tlpSqlResult.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 12);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Gauss";
-            // 
-            // rtxtBoxGauss
-            // 
-            this.rtxtBoxGauss.Location = new System.Drawing.Point(249, 3);
-            this.rtxtBoxGauss.Name = "rtxtBoxGauss";
-            this.rtxtBoxGauss.Size = new System.Drawing.Size(100, 58);
-            this.rtxtBoxGauss.TabIndex = 1;
-            this.rtxtBoxGauss.Text = "";
-            // 
-            // rtxtBoxOracle
-            // 
-            this.rtxtBoxOracle.Location = new System.Drawing.Point(55, 3);
-            this.rtxtBoxOracle.Name = "rtxtBoxOracle";
-            this.rtxtBoxOracle.Size = new System.Drawing.Size(100, 58);
-            this.rtxtBoxOracle.TabIndex = 0;
-            this.rtxtBoxOracle.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Oracle";
             // 
             // splitContainer1
             // 
@@ -287,6 +255,46 @@ namespace SQLFormat
             this.splitContainer1.Size = new System.Drawing.Size(572, 525);
             this.splitContainer1.SplitterDistance = 439;
             this.splitContainer1.TabIndex = 6;
+            // 
+            // cboxOracle
+            // 
+            this.cboxOracle.AutoSize = true;
+            this.cboxOracle.Location = new System.Drawing.Point(3, 3);
+            this.cboxOracle.Name = "cboxOracle";
+            this.cboxOracle.Size = new System.Drawing.Size(60, 16);
+            this.cboxOracle.TabIndex = 3;
+            this.cboxOracle.Text = "Oracle";
+            this.cboxOracle.UseVisualStyleBackColor = true;
+            // 
+            // cboxGauss
+            // 
+            this.cboxGauss.AutoSize = true;
+            this.cboxGauss.Location = new System.Drawing.Point(256, 3);
+            this.cboxGauss.Name = "cboxGauss";
+            this.cboxGauss.Size = new System.Drawing.Size(54, 16);
+            this.cboxGauss.TabIndex = 4;
+            this.cboxGauss.Text = "Gauss";
+            this.cboxGauss.UseVisualStyleBackColor = true;
+            // 
+            // dgvOracle
+            // 
+            this.dgvOracle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOracle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOracle.Location = new System.Drawing.Point(70, 3);
+            this.dgvOracle.Name = "dgvOracle";
+            this.dgvOracle.RowTemplate.Height = 23;
+            this.dgvOracle.Size = new System.Drawing.Size(180, 58);
+            this.dgvOracle.TabIndex = 5;
+            // 
+            // dgvGauss
+            // 
+            this.dgvGauss.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGauss.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGauss.Location = new System.Drawing.Point(323, 3);
+            this.dgvGauss.Name = "dgvGauss";
+            this.dgvGauss.RowTemplate.Height = 23;
+            this.dgvGauss.Size = new System.Drawing.Size(180, 58);
+            this.dgvGauss.TabIndex = 6;
             // 
             // Form1
             // 
@@ -306,6 +314,8 @@ namespace SQLFormat
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOracle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGauss)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,11 +337,11 @@ namespace SQLFormat
         private System.Windows.Forms.CheckBox cboxDefine;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.TableLayoutPanel tlpSqlResult;
-        private System.Windows.Forms.RichTextBox rtxtBoxGauss;
-        private System.Windows.Forms.RichTextBox rtxtBoxOracle;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cboxOracle;
+        private System.Windows.Forms.CheckBox cboxGauss;
+        private System.Windows.Forms.DataGridView dgvOracle;
+        private System.Windows.Forms.DataGridView dgvGauss;
     }
 }
 
