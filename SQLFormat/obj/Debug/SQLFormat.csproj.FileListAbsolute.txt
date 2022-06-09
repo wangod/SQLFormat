@@ -9,16 +9,6 @@ E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.csproj.CoreCompileIn
 E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.exe
 E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.pdb
 E:\work\code\mycode\SQLFormat\SQLFormat\obj\Debug\SQLFormat.SettingForm.resources
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\Oracle.ManagedDataAccess.dll
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.Buffers.dll
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.Memory.dll
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.Numerics.Vectors.dll
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.Text.Encodings.Web.dll
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.Text.Json.dll
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.Threading.Tasks.Extensions.dll
-E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.ValueTuple.dll
 E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.Buffers.xml
 E:\work\code\mycode\SQLFormat\SQLFormat\bin\Debug\System.Memory.xml

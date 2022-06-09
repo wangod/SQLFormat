@@ -111,6 +111,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
@@ -136,6 +137,36 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Oracle.ManagedDataAccess.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\System.Buffers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\System.Memory.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\System.Numerics.Vectors.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\System.Text.Encodings.Web.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\System.Text.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\System.ValueTuple.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
